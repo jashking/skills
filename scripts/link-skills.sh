@@ -8,12 +8,13 @@ set -euo pipefail
 # Links all skills in the repository into the local skill directories used by
 # each agent harness:
 #   - ~/.claude/skills  — Claude Code
+#   - ~/.codex/skills   — Codex
 #   - ~/.agents/skills  — Codex and other Agent Skills-compatible harnesses
 # Each entry is a symlink into this repo, so a `git pull` is all that's needed
 # to keep installed skills up to date.
 
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
-DESTS=("$HOME/.claude/skills" "$HOME/.agents/skills")
+DESTS=("$HOME/.claude/skills" "$HOME/.codex/skills" "$HOME/.agents/skills")
 
 # Collect the repo's skills once, link into every destination.
 names=()
